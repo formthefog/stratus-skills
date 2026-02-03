@@ -73,6 +73,77 @@ export OPENAI_API_KEY=sk-...
 
 ---
 
+## For Codex: Installation Instructions
+
+**When a user asks to install the Codex skill, follow these steps:**
+
+### 1. Identify the Codex Skills Directory
+
+```bash
+# Check if user has .codex/skills/ directory
+ls ~/.codex/skills/ 2>/dev/null || ls ./.codex/skills/ 2>/dev/null
+```
+
+**Typical locations:**
+- Global: `~/.codex/skills/`
+- Project-local: `./.codex/skills/`
+
+### 2. Clone or Copy the Stratus Skill
+
+**Option A: Clone into skills directory (recommended)**
+
+```bash
+cd ~/.codex/skills/
+git clone https://github.com/formthefog/stratus-skills.git temp-stratus
+cp -r temp-stratus/codex/stratus ./stratus
+rm -rf temp-stratus
+```
+
+**Option B: Direct copy if repo is already cloned**
+
+```bash
+# If user has already cloned this repo somewhere
+cp -r /path/to/stratus-skills/codex/stratus ~/.codex/skills/stratus
+```
+
+### 3. Verify Installation
+
+```bash
+# Check that skill exists
+ls ~/.codex/skills/stratus/SKILL.md
+
+# Should show:
+# SKILL.md
+# docs/
+# puzzles/
+# examples/
+```
+
+### 4. Test the Skill
+
+In Codex, run:
+```
+stratus help
+```
+
+Should show the comprehensive Stratus overview and quick menu.
+
+### 5. Environment Setup (Required)
+
+The skill needs these environment variables:
+
+```bash
+# Add to ~/.bashrc or ~/.zshrc or .env
+export STRATUS_API_KEY=stratus_sk_live_...
+export STRATUS_API_URL=http://212.115.124.137:8000
+
+# Optional (for model comparison)
+export ANTHROPIC_API_KEY=sk-ant-...
+export OPENAI_API_KEY=sk-...
+```
+
+---
+
 ## What's Included
 
 ### Comprehensive Stratus Skill (7,000+ lines)
@@ -99,6 +170,29 @@ export OPENAI_API_KEY=sk-...
 - `rollout-planning.md` - Multi-step planning patterns
 - `agent-integration.md` - Agent framework integration
 - `comparison.md` - Model comparison utilities
+
+### Codex Skill (Equivalent)
+
+**Main skill:** `codex/stratus/SKILL.md` (Codex-adapted)
+- Same command catalog and outputs as Claude skill
+- Codex usage notes for intent-triggered commands
+- References the same docs, puzzles, and examples (mirrored)
+
+**Supporting docs:** `codex/stratus/docs/` (5 files)
+- `ARCHITECTURE.md` - X1-AC technical deep dive
+- `BENCHMARKS.md` - Performance data and metrics
+- `INTEGRATION.md` - Integration patterns and guides
+- `API.md` - Complete API reference
+- `TROUBLESHOOTING.md` - Debug and fix issues
+
+**Puzzle suite:** `codex/stratus/puzzles/`
+- `index.md` - All 20 impossible puzzles organized
+
+**Code examples:** `codex/stratus/examples/` (4 files)
+- `basic-reasoning.md`
+- `rollout-planning.md`
+- `agent-integration.md`
+- `comparison.md`
 
 ---
 
@@ -243,6 +337,12 @@ stratus-skills/
             ├── rollout-planning.md
             ├── agent-integration.md
             └── comparison.md
+└── codex/
+    └── stratus/                       # Codex skill (equivalent)
+        ├── SKILL.md
+        ├── docs/
+        ├── puzzles/
+        └── examples/
 ```
 
 ### Integration Example
