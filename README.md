@@ -1,8 +1,45 @@
 # Stratus Skills
 
-Comprehensive Claude Code skills for Stratus X1 - the world's first production-ready Predictive Action Model.
+Stratus X1 is a **Predictive Action Model** that turns LLMs into agents that can **simulate, validate, and plan** before acting. These skills let any LLM tap into a world model that predicts how digital environments respond to actions — unlocking reliability, precision, and long-horizon control that plain prompting can’t reach.
 
-## For LLMs: Installation Instructions
+If you’ve ever watched an LLM:
+- Miscount characters
+- Make a brittle multi-step plan
+- Hallucinate a tool response
+- Get lost in long-horizon tasks
+
+Stratus X1 is the missing system. It doesn’t guess. It **predicts outcomes**.
+
+---
+
+## What Stratus X1 Unlocks
+
+### 1) Reliable Action Planning
+Stratus simulates action sequences before execution, so agents can **choose the path that actually works** — not the one that sounds good.
+
+### 2) True Computation (Not Token Guessing)
+Counting, arithmetic, logic verification, and structured reasoning are handled **correctly**, because Stratus operates on **state transitions**, not token heuristics.
+
+### 3) Long-Horizon Control
+Stratus predicts **how each step changes the world state**, allowing agents to maintain direction across long, multi-step tasks.
+
+### 4) Lower Cost, Higher Accuracy
+Stratus compresses meaning into a world-model embedding, achieving **20–30× token reduction** while improving task success rates.
+
+### 5) Built for Agents
+Stratus is a **world model** + **policy head**. That means agents can:
+- Predict what will happen if they act
+- Validate a plan before executing
+- Compare multiple strategies
+- Recover from failures with state-aware reasoning
+
+---
+
+## In One Sentence
+
+**Stratus X1 lets your LLM plan and act like an agent that can see the future.**
+
+## Install (Claude Code)
 
 **When a user asks to install Stratus skills, follow these steps:**
 
@@ -73,7 +110,7 @@ export OPENAI_API_KEY=sk-...
 
 ---
 
-## For Codex: Installation Instructions
+## Install (Codex)
 
 **When a user asks to install the Codex skill, follow these steps:**
 
@@ -144,7 +181,9 @@ export OPENAI_API_KEY=sk-...
 
 ---
 
-## What's Included
+---
+
+## What You Get
 
 ### Comprehensive Stratus Skill (7,000+ lines)
 
@@ -170,6 +209,29 @@ export OPENAI_API_KEY=sk-...
 - `rollout-planning.md` - Multi-step planning patterns
 - `agent-integration.md` - Agent framework integration
 - `comparison.md` - Model comparison utilities
+
+### Codex Skill (Equivalent)
+
+**Main skill:** `codex/stratus/SKILL.md` (Codex-adapted)
+- Same command catalog and outputs as Claude skill
+- Codex usage notes for intent-triggered commands
+- References the same docs, puzzles, and examples (mirrored)
+
+**Supporting docs:** `codex/stratus/docs/` (5 files)
+- `ARCHITECTURE.md` - X1-AC technical deep dive
+- `BENCHMARKS.md` - Performance data and metrics
+- `INTEGRATION.md` - Integration patterns and guides
+- `API.md` - Complete API reference
+- `TROUBLESHOOTING.md` - Debug and fix issues
+
+**Puzzle suite:** `codex/stratus/puzzles/`
+- `index.md` - All 20 impossible puzzles organized
+
+**Code examples:** `codex/stratus/examples/` (4 files)
+- `basic-reasoning.md`
+- `rollout-planning.md`
+- `agent-integration.md`
+- `comparison.md`
 
 ### Codex Skill (Equivalent)
 
@@ -321,6 +383,7 @@ In Claude Code:
 ```
 stratus-skills/
 ├── README.md                          # This file
+├── AGENTS.md                          # Codex instructions for this repo
 └── claude/
     └── stratus/                       # The complete skill
         ├── SKILL.md                   # Main skill (1,723 lines)
